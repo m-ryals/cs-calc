@@ -4,6 +4,9 @@ import java.util.Scanner;
  * Title: Calculator
  * Authors: Eli Lowe and Matthew Ryals
  * Description: This program calculates user inputs
+ * 
+ * 
+ * How we worked together: We talked over discord to get stuff working and worked together on this weeks code.
  */
 
 public class CalculatorQ1 {
