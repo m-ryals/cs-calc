@@ -21,9 +21,9 @@ public class CalculatorQ1 {
 		int num1, num2, addSum, subSum, timesProduct, divProduct, modProduct;
 		
 		//Get values for num1 and num2
-		System.out.print("Please enter the first integer:");
+		System.out.print("Please enter the first integer: ");
 		num1 = scan.nextInt();
-		System.out.println("Please enter the second integer:");
+		System.out.print("Please enter the second integer: ");
 		num2 = scan.nextInt();
 		
 		//Calculations
