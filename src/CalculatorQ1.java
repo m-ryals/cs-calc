@@ -18,29 +18,37 @@ public class CalculatorQ1 {
 		Scanner scan = new Scanner(System.in);
 		
 		//Create Variables
-		int num1, num2, addSum, subSum, timesProduct, divProduct, modProduct;
+		int num1, num2;
 		
-		//Get values for num1 and num2
+		//Get values for num1 and num2 and op
+		System.out.print("Enter your operator: ");
+		String op = scan.nextLine();
 		System.out.print("Please enter the first integer: ");
 		num1 = scan.nextInt();
 		System.out.print("Please enter the second integer: ");
-		num2 = scan.nextInt();
-		
-		//Calculations
-		addSum = num1 + num2;
-		subSum = num1 - num2;
-		timesProduct = num1 * num2;
-		divProduct = num1 / num2;
-		modProduct = num1 % num2;
+		num2 = scan.nextInt();		
 		
 		//Results
-		System.out.println(num1 + " + " + num2 + " = " + addSum);
-		System.out.println(num1 + " - " + num2 + " = " + subSum);
-		System.out.println(num1 + " * " + num2 + " = " + timesProduct);
-		System.out.println(num1 + " / " + num2 + " = " + divProduct + " R" + modProduct);
+		System.out.println(solve(num1, num2, op));
 		
 		//Printed at end
 		System.out.println("Thanks for using our Calculator! Goodbye!");
+	}
+	
+	//Setup a solver based on entered operator 
+	public static String solve(int n1, int n2, String op) {
+		switch(op) {
+		case "+":
+			return n1 + " + " + n2 + " = " + (n1+n2);
+		case "-":
+			return n1 + " - " + n2 + " = " + (n1-n2);
+		case "/":
+			return n1 + " / " + n2 + " = " + (n1/n2);
+		case "*":
+			return n1 + " * " + n2 + " = " + (n1*n2);
+		default: 
+			return "oops";
+		}
 	}
 	
 }
