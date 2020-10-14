@@ -11,28 +11,44 @@ import java.util.Scanner;
 
 public class CalculatorQ1 {
 	public static void main(String[] args) {
-		//Printed at beginning
-		System.out.println("Welcome to our Calculator! Good luck on your math!");
+		//Variable to control if code needs to continue
+		boolean toggle = true;
 		
-		//Creating Scanner
-		Scanner scan = new Scanner(System.in);
-		
-		//Create Variables
-		int num1, num2;
-		
-		//Get values for num1 and num2 and op
-		System.out.print("Enter your operator: ");
-		String op = scan.nextLine();
-		System.out.print("Please enter the first integer: ");
-		num1 = scan.nextInt();
-		System.out.print("Please enter the second integer: ");
-		num2 = scan.nextInt();		
-		
-		//Results
-		System.out.println(solve(num1, num2, op));
-		
-		//Printed at end
-		System.out.println("Thanks for using our Calculator! Goodbye!");
+		//Keeps game running until user wants the program to end
+		while (toggle) {
+			//Printed at beginning
+			System.out.println("Welcome to our Calculator! Good luck on your math!");
+
+			//Creating Scanner
+			Scanner scan = new Scanner(System.in);
+
+			//Create Variables
+			int num1, num2;
+
+			//Get values for num1 and num2 and op
+			System.out.print("Enter your operator: ");
+			String op = scan.nextLine();
+			System.out.print("Please enter the first integer: ");
+			num1 = scan.nextInt();
+			System.out.print("Please enter the second integer: ");
+			num2 = scan.nextInt();		
+
+			//Results
+			System.out.println(solve(num1, num2, op));
+
+			//Prompts user asking if they want to use the calculator again
+			System.out.println();
+			System.out.println("Would you like to do another calculation? Type Y for yes and N for no:");
+			String contUse = scan.nextLine();
+
+			if (contUse.equals("N") || contUse.equals("n")) {
+				//Printed at end
+				System.out.println("Thanks for using our Calculator! Goodbye!");
+
+				//Ends program
+				toggle = false;
+			}
+		}
 	}
 	
 	//Setup a solver based on entered operator 
